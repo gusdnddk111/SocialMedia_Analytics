@@ -53,6 +53,7 @@ with open('./bestSeller_book_data.csv', 'w') as csvfile:
     fieldnames = ['book_writer', 'book_introduce']
     fwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
     fwriter.writeheader()
+    fwriter.writerow("\xEF\xBB\xBF")
     for i in range(0,count):
         fwriter.writerow({'book_writer' :book_writer.pop().encode('utf-8'),'book_introduce' : book_introduce.pop().encode('utf-8')})
 
