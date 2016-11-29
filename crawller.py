@@ -175,7 +175,7 @@ with open('./book_data.csv', 'w') as csvfile:
     fieldnames = ['book_name','book_writer','book_date','book_price','book_cover','book_page','book_size','book_weight','book_category','book_ISBN','book_publisher','sales_point']
     fwriter =  csv.DictWriter(csvfile, fieldnames=fieldnames)
     fwriter.writeheader()
-    fwriter.writerow("\xEF\xBB\xBF")
+    
     for i in range(0,count):
         fwriter.writerow({'book_name':book_name.pop().encode('utf-8'),'book_writer':book_writer.pop().encode('utf-8'),'book_date':book_date.pop().encode('utf-8'),'book_price':book_price.pop().encode('utf-8'),'book_cover':book_cover.pop().encode('utf-8'),'book_page':book_page.pop().encode('utf-8'),'book_size':book_size.pop().encode('utf-8'),'book_weight':book_weight.pop().encode('utf-8'),'book_category':book_category.pop().encode('utf-8'),'book_ISBN':book_ISBN.pop().encode('utf-8'),'book_publisher':book_publisher.pop().encode('utf-8'),'sales_point':book_sales_point.pop().encode('utf-8')})
 
